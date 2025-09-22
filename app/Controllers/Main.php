@@ -16,9 +16,15 @@ class Main extends BaseController
 
     public function getArticles()
     {
-        $data['articlesTop'] = $this->articleModel->where('published', 1)->where('top', 1)->orderBy('date')->findAll();
+        $data['article'] = $this->articleModel->where('published', 1)->where('top', 1)->orderBy('date')->findAll();
         //var_dump($data['articlesTop']);
         echo view('HomePage', $data);
 
+    }
+
+    public function getNavbar()
+    {
+        $data['navbar'] = $this->navbarModel->findAll();
+        return $data;
     }
 }
