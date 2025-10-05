@@ -12,7 +12,17 @@ class Article extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    // Allow typical article fields used by the app
+    protected $allowedFields    = [
+        'title', 'text', 'photo', 'published', 'top', 'date'
+    ];
+
+    // Disable automatic timestamps because the table doesn't have created_at/updated_at
+    protected $useTimestamps = false;
+    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -20,12 +30,7 @@ class Article extends Model
     protected array $casts = [];
     protected array $castHandlers = [];
 
-    // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    // Dates (configured above)
 
     // Validation
     protected $validationRules      = [];

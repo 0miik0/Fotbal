@@ -48,10 +48,7 @@
                                 </ul>
                             <?php endif; ?>
 
-                        <a href="<?= site_url('seasons/'. $season->id .'/matches') ?>" 
-                   class="btn btn-primary mt-2">
-                    Zobrazit zápasy
-                </a>
+                        
 
                 </div>
             </div>

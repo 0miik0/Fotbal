@@ -23,7 +23,7 @@
                        class="fw-bold fs-3 text-white text-decoration-none">
                         <?= esc($mainArticle->title) ?>
                     </a>
-                    <div class="mt-3 fs-5"><?= date('j.n.Y', strtotime($mainArticle->created_at ?? 'now')) ?></div>
+                    <div class="mt-3 fs-5"><?= date('d.m.Y', $mainArticle->date) ?></div>
                     <p class="mt-auto mb-0 fs-6"><?= substr(strip_tags($mainArticle->text), 0, 100) ?>...</p>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                                class="fw-bold fs-6 text-white text-decoration-none">
                                 <?= esc($article->title) ?>
                             </a>
-                            <div class="mt-2 fs-6"><?= date('j.n.Y', strtotime($article->created_at ?? 'now')) ?></div>
+                            <div class="mt-2 fs-6"><?= date('d.m.Y', $article->date) ?></div>
                             <p class="mt-auto mb-0 small"><?= substr(strip_tags($article->text), 0, 60) ?>...</p>
                         </div>
                     </div>
