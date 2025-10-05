@@ -24,3 +24,4 @@ $routes->get('seasons/(:num)/matches', 'SeasonController::matches/$1');
 $routes->get('seasons', 'SeasonController::index');
 $routes->get('seasons/show/(:num)', 'SeasonController::show/$1');
 $routes->get('match/(:num)', 'SeasonController::matchDetail/$1');
+$routes->get('teams', 'Teams::index');

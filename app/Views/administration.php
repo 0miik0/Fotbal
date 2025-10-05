@@ -25,7 +25,7 @@
             <div class="mt-4">
                 <h2>Nástroje administrace</h2>
                 <div class="list-group">
-                    <a href="<?= base_url('admin/articles') ?>" class="list-group-item list-group-item-action">Správa článků</a>
+                    <a href="<?= base_url('admin/articles') ?>" class="btn btn-primary me-2">Správa článků</a>
                 </div>
             </div>
         <?php endif; ?>
