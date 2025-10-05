@@ -15,17 +15,17 @@
 
         <?php if (! $ionAuth->loggedIn()) : ?>
             <p>Pro pokračování se přihlas nebo registruj:</p>
-            <a href="<?= base_url('login') ?>" class="btn btn-primary me-2">Login</a>
-            <a href="<?= base_url('register') ?>" class="btn btn-secondary">Register</a>
+            <a href="<?= base_url('login') ?>" class="btn btn-primary me-2 w-25">Login</a>
+            <a href="<?= base_url('register') ?>" class="btn btn-secondary w-25">Register</a>
         <?php else: ?>
-            <a href="<?= base_url('logout') ?>" class="btn btn-danger">Logout</a>
+            <a href="<?= base_url('logout') ?>" class="btn btn-danger w-25">Logout</a>
         <?php endif; ?>
     
         <?php if ($ionAuth->isAdmin()): ?>
             <div class="mt-4">
                 <h2>Nástroje administrace</h2>
                 <div class="list-group">
-                    <a href="<?= base_url('admin/articles') ?>" class="btn btn-primary me-2">Správa článků</a>
+                    <a href="<?= base_url('admin/articles') ?>" class="btn btn-primary w-25">Správa článků</a>
                 </div>
             </div>
         <?php endif; ?>
