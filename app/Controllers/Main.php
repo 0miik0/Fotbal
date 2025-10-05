@@ -9,22 +9,22 @@ class Main extends BaseController
 {
 
     public function __construct(){
-        $this->navbarModel = new Navbar();
+        
         $this->articleModel = new Article();
         
     }
 
     public function getArticles()
     {
-        $data['article'] = $this->articleModel->where('published', 1)->where('top', 1)->orderBy('date')->findAll();
-        //var_dump($data['articlesTop']);
+        $data['article'] = $this->articleModel->where('published', 1)->where('top', 1)->orderBy('date', 'DESC')->findAll();
+        //var_dump($data['article']);
         echo view('HomePage', $data);
 
     }
 
-    public function getNavbar()
+    public function show($id)
     {
-        $data['navbar'] = $this->navbarModel->findAll();
-        return $data;
+        $article = $this->articleModel->find($id);
+        return view('article', ['article' => $article]);
     }
 }
