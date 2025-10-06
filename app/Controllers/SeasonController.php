@@ -6,6 +6,7 @@ use App\Models\Season;
 use App\Models\League;
 use App\Models\Game;
 use App\Models\Team;
+use App\Models\LeagueSeason;
 
 class SeasonController extends BaseController
 {
@@ -13,6 +14,7 @@ class SeasonController extends BaseController
     protected $leagueModel;
     protected $gameModel;
     protected $teamModel;
+    protected $leagueSeasonModel;
 
     public function __construct()
     {
@@ -20,6 +22,7 @@ class SeasonController extends BaseController
         $this->leagueModel = new League(); 
         $this->gameModel   = new Game();
         $this->teamModel   = new Team();
+        $this->leagueSeasonModel = new LeagueSeason();
     }
 
     public function index()

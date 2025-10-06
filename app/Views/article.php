@@ -6,7 +6,7 @@
     <h1><?= $article->title ?></h1>
 
     <p class="text-muted">
-        Publikováno: <?= date('j.n.Y', strtotime($article->created_at ?? 'now')) ?>
+        Publikováno: <?= date('j.n.Y', $article->date) ?>
     </p>
 
     <?php if ($article->photo): ?>

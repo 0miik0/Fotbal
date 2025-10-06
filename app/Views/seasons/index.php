@@ -36,20 +36,8 @@
                                 <a href="<?= site_url('seasons/show/' . $season->id) ?>">
                                     Sezóna <?= esc($season->start) ?> - <?= esc($season->finish) ?>
                                 </a>
+                                
                             </h5>
-
-                            <?php if (!empty($season->leagues)) : ?>
-                                <ul class="list-unstyled">
-                                    <?php foreach ($season->leagues as $league) : ?>
-                                        <li>
-                                            <?= esc($league->name) ?> (Úroveň: <?= esc($league->level) ?>)
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            <?php endif; ?>
-
-                        
-
                 </div>
             </div>
         </div>

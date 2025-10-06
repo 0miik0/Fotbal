@@ -12,10 +12,10 @@
     <?php else: ?>
         <ul class="list-group">
             <?php foreach ($leagues as $league): ?>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <?= esc($league->name) ?>
-                    <span class="badge bg-primary rounded-pill">Úroveň: <?= esc($league->level) ?></span>
-                </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <?= esc($league->name) ?>
+                        <span class="badge bg-primary rounded-pill">Úroveň: <?= esc($league->level) ?></span>
+                    </li>
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
