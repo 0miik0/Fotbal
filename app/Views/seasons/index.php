@@ -15,12 +15,12 @@
   border-radius: 5px;
 }
 .pagination a.active {
-  background-color: #4CAF50;
+  background-color: #2758f8ff;
   color: white;
   border-radius: 5px;
 }
 
-.pagination a:hover:not(.active) {background-color: #6495ED;}
+.pagination a:hover:not(.active) {background-color: #72a4ffff;}
 </style>
 
 <div class="container">
@@ -33,7 +33,7 @@
                     <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a href="<?= site_url('seasons/show/' . $season->id) ?>">
+                                <a href="<?= site_url('seasons/' . $season->id) ?>">
                                     Sezóna <?= esc($season->start) ?> - <?= esc($season->finish) ?>
                                 </a>
                                 
@@ -46,7 +46,16 @@
 
     <footer>
         <div class="d-flex">
-            <div class="mx-auto text-center pagination a"> <?= $pager->links(); ?> </div>
+            <div class="mx-auto text-center pagination a">
+                <?php
+                    $pageCount = (int) ($pager->getPageCount() ?? 1);
+                    $current = (int) ($pager->getCurrentPage() ?? 1);
+                    for ($p = 1; $p <= $pageCount; $p++):
+                        $class = $p === $current ? 'active' : '';
+                ?>
+                    <a class="<?= $class ?>" href="<?= current_url() . '?page=' . $p ?>"><?= $p ?></a>
+                <?php endfor; ?>
+            </div>
         </div>
     </footer>
 

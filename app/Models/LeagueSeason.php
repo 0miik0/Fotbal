@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class LeagueSeason extends Model
 {
-    protected $table            = 'leagueseason';
+    protected $table            = 'league_season';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';

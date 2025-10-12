@@ -21,13 +21,13 @@
                 <tbody>
                     <?php foreach ($matches as $match): ?>
                         <tr>
-                            <td><?= esc($teams[$match->home_team]->name ?? 'Neznámý tým') ?></td>
+                            <td><?= esc($teams[$match->home]->name ?? 'Neznámý tým') ?></td>
                             <td>
-                                <a href="<?= site_url('seasons/match-detail/' . $match->id) ?>">
-                                    <?= esc($match->home_goals) ?> : <?= esc($match->away_goals) ?>
+                                <a href="<?= site_url('match/' . $match->id) ?>">
+                                    <?= esc($match->goals_home) ?> : <?= esc($match->goals_away) ?>
                                 </a>
                             </td>
-                            <td><?= esc($teams[$match->away_team]->name ?? 'Neznámý tým') ?></td>
+                            <td><?= esc($teams[$match->away]->name ?? 'Neznámý tým') ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
